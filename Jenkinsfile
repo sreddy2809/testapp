@@ -3,6 +3,9 @@ pipeline{
 	environment {
 	IMAGE_NAME = "docker.io/sheshivr1981/nbapptest:v"
 	}
+        triggers {
+		  pollSCM '* * * * *'
+        }
 
 	stages{
 		stage("SCM"){	
