@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: dep2
+   labels:
+      app: mbapp
+spec:
+  strategy:
+    type: ReCreate
+  replicas: 3
+  selector:
+    matchLabels:
+       app: mbapp
+  template:
+     metadata:
+       labels:
+         app: mbapp
+     spec:
+       containers:
+       - name: c1
+         image: REP_IMAGE
+       
