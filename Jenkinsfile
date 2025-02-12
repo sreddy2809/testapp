@@ -41,7 +41,7 @@ pipeline{
 			steps{
 					withCredentials([sshUserPrivateKey(credentialsId: 'K8scluster', keyFileVariable: 'OSPKEY', usernameVariable: 'OSUSER')]) {
                    sh """
-				    sed -i "s/image_rep/${IMAGE_NAME}${BUILD_NUMBER}/g" deployment.yml
+				    sed -i "s/REP_IMAGE/${IMAGE_NAME}${BUILD_NUMBER}/g" deployment.yml
                     cat deployment.yml
                     scp -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18:/home/ubuntu 					
 					ssh -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18 kubectl apply -f deployment.yml
