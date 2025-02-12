@@ -43,7 +43,7 @@ pipeline{
                    sh """
 				    sed -i "s/REP_IMAGE/${IMAGE_NAME}${BUILD_NUMBER}/g" deployment.yml
                     cat deployment.yml
-                    scp -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18:/home/ubuntu 					
+                    scp -i ${OSPKEY} -o StrictHostKeyChecking=no deployment.yml ${OSUSER}@18.143.92.18:/home/ubuntu 					
 					ssh -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18 kubectl apply -f deployment.yml
 				   """
 				}			
