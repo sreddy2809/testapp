@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	environment {
-	IMAGE_NAME = "docker.io/sheshivr1981/nbapptest:v"
+	IMAGE_NAME = "docker.io/sheshivr1981/mbapp:v"
 	}
         triggers {
 		  pollSCM '* * * * *'
@@ -11,7 +11,7 @@ pipeline{
 		stage("SCM"){	
 			steps{
 				echo "****Connect to Github*********"
-				git credentialsId: 'GITHUBACCESS', url: 'https://github.com/sreddy2809/testapp.git'
+				git credentialsId: 'GITHUB', url: 'https://github.com/sreddy2809/testapp.git'
 	            sh """
 				  ls -l 
 				"""
@@ -28,7 +28,7 @@ pipeline{
 		}
 		stage("ImagePush"){	
 			steps{
-			  withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', passwordVariable: 'DPASSWD', usernameVariable: 'DUSERNAME')]) {
+			  withCredentials([usernamePassword(credentialsId: 'DOCKERREG', passwordVariable: 'DPASSWD', usernameVariable: 'DUSERNAME')]) {
                           sh """
 							docker login -u ${DUSERNAME} -p ${DPASSWD}
 							docker push ${IMAGE_NAME}${BUILD_NUMBER}
@@ -39,10 +39,12 @@ pipeline{
 		}
 		stage("Deploy"){
 			steps{
-					withCredentials([sshUserPrivateKey(credentialsId: 'APPSERVER', keyFileVariable: 'OSPKEY', usernameVariable: 'OSUSER')]) {
+					withCredentials([sshUserPrivateKey(credentialsId: 'K8scluster', keyFileVariable: 'OSPKEY', usernameVariable: 'OSUSER')]) {
                    sh """
-					ssh -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@122.248.211.243 docker run -d ${IMAGE_NAME}${BUILD_NUMBER}
-ssh -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@122.248.211.243 docker ps -a
+				    sed -i "s/image_rep/${IMAGE_NAME}${BUILD_NUMBER}/g" deployment.yml
+                    cat deployment.yml
+                    scp -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18:/home/ubuntu 					
+					ssh -i ${OSPKEY} -o StrictHostKeyChecking=no ${OSUSER}@18.143.92.18 kubectl apply -f deployment.yml
 				   """
 				}			
 				
