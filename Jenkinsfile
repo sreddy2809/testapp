@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	environment {
-	IMAGE_NAME = "docker.io/sheshivr1981/mbapp:v"
+	IMAGE_NAME = "docker.io\/sheshivr1981\/mbapptest:v"
 	}
         triggers {
 		  pollSCM '* * * * *'
