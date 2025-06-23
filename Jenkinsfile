@@ -11,7 +11,7 @@ pipeline{
 		stage("SCM"){	
 			steps{
 				echo "****Connect to Github*********"
-				git credentialsId: 'GITHUB', url: 'https://github.com/sreddy2809/testapp.git'
+				git credentialsId: 'GithubAccess', url: 'https://github.com/sreddy2809/testapp.git'
 	            sh """
 				  ls -l 
 				"""
