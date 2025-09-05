@@ -1,3 +1,3 @@
 FROM ubuntu
 WORKDIR /app
-CMD ["sleep","200"]
+CMD ["sleep","400"]
