@@ -6,5 +6,5 @@ jobs:
     steps:
     - name: Print Event Name 
       run: |
-         echo "The Event name is ${{ github.event }}"
+         echo "The Event name is ${{ github.event_name }}"
          echo " The Branch name is ${{ github.ref_name }}"
