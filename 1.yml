@@ -1,0 +1,10 @@
+name: WF Triggers
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Event Name 
+      run: |
+         echo "The Event name is ${{ github.event }}"
+         echo " The Branch name is ${{ github.ref_name }}"
