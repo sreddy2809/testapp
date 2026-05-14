@@ -2,7 +2,7 @@ name: WF Triggers
 on: 
   push:
     paths:
-     - 'app/*'
+     - 'app/**'
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -11,3 +11,6 @@ jobs:
       run: |
          echo "The Event name is ${{ github.event_name }}"
          echo " The Branch name is ${{ github.ref_name }}"
+         
+         
+        
