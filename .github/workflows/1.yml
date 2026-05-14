@@ -1,5 +1,9 @@
 name: WF Triggers
-on: push
+on: 
+  push:
+    branches:
+    - master
+    - dev
 jobs:
   job1:
     runs-on: ubuntu-latest
