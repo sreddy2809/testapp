@@ -1,9 +1,8 @@
 name: WF Triggers
 on: 
   push:
-    branches:
-    - master
-    - dev
+    paths:
+     - 'app/*'
 jobs:
   job1:
     runs-on: ubuntu-latest
