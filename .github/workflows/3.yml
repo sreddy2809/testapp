@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   job1:
-    if: 10=20
+    if: 10==20
     runs-on: ubuntu-latest
     steps:
     - name: This is Testing
