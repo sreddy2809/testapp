@@ -3,13 +3,14 @@ on:
   push:
 jobs:
   job1:
-    if: 10==20
+    if: 10<100
     runs-on: ubuntu-latest
     steps:
     - name: This is Testing
       run: |
         echo "Testing" 
     - name: This is For Deploy
+      if: 10==5
       run: |
          echo "This Deploy Step"	  
      
