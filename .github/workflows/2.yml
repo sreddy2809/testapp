@@ -1,0 +1,14 @@
+name: Wf event tag fliters
+on: 
+  push:
+    tags:
+     - 'v*'
+     - 'Rel*'
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: This is Testing
+      run: |
+        echo "Testing"      
+     
