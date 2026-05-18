@@ -1,0 +1,15 @@
+name: Wf Conditions 
+on: 
+  push:
+jobs:
+  job1:
+    if: 10=20
+    runs-on: ubuntu-latest
+    steps:
+    - name: This is Testing
+      run: |
+        echo "Testing" 
+    - name: This is For Deploy
+      run: |
+         echo "This Deploy Step"	  
+     
