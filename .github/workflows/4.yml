@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deloying Application
+      if: github.ref_name== 'master'
       run: |
-         echo "${{ github.ref_name }}"
-      
+         echo "deployed The Application"
+    - name: Build The Application
+      if: github.ref_name != 'master' 
+      uses: actions/checkout@v6
+         
       
