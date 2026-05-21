@@ -1,0 +1,13 @@
+name: Conditions-1 
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: This is step1
+      run: |
+         pwd
+         sleep 10
+    - name: This step2
+      run: |
+          echo "Todays date is $(date)"      
