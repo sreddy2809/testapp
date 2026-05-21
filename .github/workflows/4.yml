@@ -1,0 +1,11 @@
+name: Testing Conditions
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deloying Application
+      run: |
+         echo "${{ github.ref_name }}"
+      
+      

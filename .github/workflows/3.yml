@@ -1,6 +1,6 @@
 name: Wf Conditions 
 on: 
-  push:
+  workflow_dispatch:
 jobs:
   job1:
     if: 10<100
