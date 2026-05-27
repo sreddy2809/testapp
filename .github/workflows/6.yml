@@ -3,6 +3,8 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      DIMAGE_NAME: ${{ steps.generate.outputs.IMAGE_NAME}}
     steps:
     - name: Gen Image name
       id: generate
@@ -13,5 +15,13 @@ jobs:
     - name: Image Build
       run: |
            echo "Image Name is ${{ steps.generate.outputs.IMAGE_NAME }}" 
-           echo "DBUSERNAME ${{ steps.generate.outputs.DB_USER }}"           
+           echo "DBUSERNAME ${{ steps.generate.outputs.DB_USER }}"  
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - name: Other Job output
+      run: |
+         echo "Docker Image is ${{ needs.job1.outputs.DIMAGE_NAME }}"
+         
          
