@@ -8,7 +8,10 @@ jobs:
       id: generate
       run: |
          echo "IMAGE_NAME=docker.io/svreddy28/IMAGE:V1" >> $GITHUB_OUTPUT
+         echo "DB_USER=Sheshi" >> $GITHUB_OUTPUT
+         echo "DB_NAME=MBAPP" >> $GITHUB_OUTPUT
     - name: Image Build
       run: |
-           echo "Image Name is ${{ steps.generate.outputs.IMAGE_NAME }}"      
+           echo "Image Name is ${{ steps.generate.outputs.IMAGE_NAME }}" 
+           echo "DBUSERNAME ${{ steps.generate.outputs.DB_USER }}"           
          
