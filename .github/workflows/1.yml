@@ -1,8 +1,6 @@
 name: WF Triggers
-on: 
-  push:
-    paths-ignore:
-     - 'doc/**'
+on: workflow_dispatch 
+ 
 jobs:
   job1:
     runs-on: ubuntu-latest

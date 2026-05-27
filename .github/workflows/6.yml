@@ -1,0 +1,14 @@
+name: WF-10
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Gen Image name
+      id: generate
+      run: |
+         echo "IMAGE_NAME=docker.io/svreddy28/IMAGE:V1" >> $GITHUB_OUTPUT
+    - name: Image Build
+      run: |
+           echo "Image Name is ${{ steps.generate.outputs.IMAGE_NAME }}      
+         
