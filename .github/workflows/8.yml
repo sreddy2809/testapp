@@ -18,6 +18,6 @@ jobs:
          docker images
     - name: push image
       run: |
-         docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+         docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
          docker push ${{ env.image_name }}
              
