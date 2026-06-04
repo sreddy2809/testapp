@@ -4,7 +4,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      DIMAGE_NAME: ${{ steps.generate.outputs.IMAGE_NAME}}
+      DIMAGE_NAME: ${{ steps.generate.outputs.IMAGE_NAME }}
+      
     steps:
     - name: Gen Image name
       id: generate
@@ -25,3 +26,6 @@ jobs:
          echo "Docker Image is ${{ needs.job1.outputs.DIMAGE_NAME }}"
          
          
+         
+ id
+ outputs 

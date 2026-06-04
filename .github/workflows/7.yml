@@ -1,0 +1,11 @@
+name: WF WORKING DIR
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: WORKING DIR
+      run: |
+         pwd
+         ls -la
+         echo "${{ github.workspace }}"
