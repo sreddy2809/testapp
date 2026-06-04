@@ -9,3 +9,9 @@ jobs:
          pwd
          ls -la
          echo "${{ github.workspace }}"
+         cd app
+         pwd
+    - name: Build Activity
+      run: |
+         pwd 
+             
