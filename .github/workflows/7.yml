@@ -7,12 +7,10 @@ jobs:
     - name: checkout
       uses: actions/checkout@v6
     - name: WORKING DIR
+      working-directory: app
       run: |
          pwd
-         ls -la
-         echo "${{ github.workspace }}"
-         cd app
-         pwd
+         ls -l
     - name: Build Activity
       run: |
          pwd 
