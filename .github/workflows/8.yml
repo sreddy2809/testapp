@@ -1,8 +1,5 @@
 name: WF PERMISSION
 on: workflow_dispatch
-permissions:
-  contents: read
-  packages: write
 jobs:
   job1:
     runs-on: ubuntu-latest
