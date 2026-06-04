@@ -3,11 +3,13 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
     steps:
     - name: checkout
       uses: actions/checkout@v6
     - name: WORKING DIR
-      working-directory: app
       run: |
          pwd
          ls -l
