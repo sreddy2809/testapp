@@ -1,0 +1,20 @@
+name: WF PERMISSION
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      image_name: ghcr.io/${{ github.actor }}/image1
+    steps:
+    - name: checkout
+      uses: actions/checkout@v6
+    - name: Build Image
+      run: |
+         ls -l
+         docker build -t ghcr.io/${{ env.image_name }}/image1 .
+         docker images
+    - name: push image 
+      run: |
+         docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+         docker push ${{ env.image_name }}
+             
