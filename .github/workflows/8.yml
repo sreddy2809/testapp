@@ -11,7 +11,7 @@ jobs:
     - name: Build Image
       run: |
          ls -l
-         docker build -t ghcr.io/${{ env.image_name }}/image1 .
+         docker build -t ${{ env.image_name }} .
          docker images
     - name: push image 
       run: |
