@@ -1,5 +1,7 @@
 name: WF PERMISSION
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  push:
 jobs:
   job1:
     runs-on: ubuntu-latest
