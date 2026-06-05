@@ -1,0 +1,13 @@
+name: Concurency
+on: push 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print msg
+      run: |
+         echo "Todays Date is $(date)"
+         sleep 100
+         echo "Todays Date is $(date)"
+         echo "Todays Date is $(date)"
+  
