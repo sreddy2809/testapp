@@ -11,6 +11,6 @@ jobs:
       run: |
          echo "Todays Date is $(date)"
          sleep 60
-         echo "Todays Date is $(date)"
-         echo "Todays Date is $(date)"
+         echo "Todays Date is $(date) sheshi"
+         echo "Todays Date is $(date) sheshivardhan"
   
