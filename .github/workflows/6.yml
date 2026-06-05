@@ -24,8 +24,3 @@ jobs:
     - name: Other Job output
       run: |
          echo "Docker Image is ${{ needs.job1.outputs.DIMAGE_NAME }}"
-         
-         
-         
- id
- outputs 
