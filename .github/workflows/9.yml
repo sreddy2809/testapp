@@ -1,7 +1,10 @@
 name: Concurency
-on: push 
+on: 
+  push:
+  workflow_dispatch:
+    
 concurrency:
-  group: mbapp
+  group: ${{ github.workflow }}-${{ github.ref }} 
   cancel-in-progress: false
 jobs:
   deploy:
@@ -10,7 +13,8 @@ jobs:
     - name: Print msg
       run: |
          echo "Todays Date is $(date)"
-         sleep 10
+         sleep 30
          echo "Todays Date is $(date) sheshi"
          echo "Todays Date is $(date) sheshivardhan kjhfasj"
   
+ 
