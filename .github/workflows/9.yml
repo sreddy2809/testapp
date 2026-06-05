@@ -2,7 +2,7 @@ name: Concurency
 on: push 
 concurrency:
   group: mbapp
-  cancel-in-true: true
+  cancel-in-progress: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
