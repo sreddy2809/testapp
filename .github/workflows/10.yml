@@ -8,7 +8,12 @@ jobs:
          os:
          - ubuntu-latest
          - windows-latest
+         appvr:
+         - "3.10" 
+         - "3.11"
+         - "3.12"
+         
      steps:
      - name: Print Msg 
        run: |
-          echo "This is ${{ runner.os }}}"
+          echo "This is ${{ matrix.os }}-${{ matrix.appvr }}"
