@@ -11,9 +11,11 @@ jobs:
          appvr:
          - "3.10" 
          - "3.11"
-         - "3.12"
-         
      steps:
-     - name: Print Msg 
+     - name: Print Msg
+       shell: bash     
        run: |
           echo "This is ${{ matrix.os }}-${{ matrix.appvr }}"
+          sleep 10;
+          wc -l /etc/passwd
+          
