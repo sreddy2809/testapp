@@ -5,6 +5,7 @@ jobs:
      runs-on: ${{ matrix.os }}
      strategy:
        fail-fast: false
+       max-parallel: 1
        matrix:
          os:
          - ubuntu-latest
@@ -18,5 +19,5 @@ jobs:
        run: |
           echo "This is ${{ matrix.os }}-${{ matrix.appvr }}"
           sleep 10
-          wc -l /etc/passwd
+          
           
