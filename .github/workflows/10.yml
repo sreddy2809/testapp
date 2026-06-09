@@ -18,6 +18,10 @@ jobs:
          exclude:
          - os: windows-latest
            appvr: "3.12"
+         
+         include:
+         - os: ubuntu-latest
+           appvr: "3.13"         
      steps:
      - name: Print Msg
        shell: bash     
