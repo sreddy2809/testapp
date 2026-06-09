@@ -1,0 +1,14 @@
+name: WF-Matrix
+on: workflow-dispatch
+jobs:
+   job1:
+     runs-on: ${{ matrix.os }}
+     strategy:
+       matrix:
+         os:
+         - ubuntu-latest
+         - windows-latest
+     steps:
+     - name: Print Msg 
+       run: |
+          echo "This is ${{ runner.os }}}"
