@@ -16,5 +16,23 @@ jobs:
          name: myartifact1
          path: myfile.txt         
     
-    
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Display list of file
+      run: |
+        pwd
+        ls -lrt
+    - name: download the Artifacts
+      uses: actions/download-artifact@v8
+      with:  
+       name: myartifact1
+       path: /sheshi
+    - name: xyz
+      run: |
+         cd /sheshi
+         ls -l
+         cat myfile.txt         
+  
     
