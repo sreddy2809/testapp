@@ -28,10 +28,10 @@ jobs:
       uses: actions/download-artifact@v8
       with:  
        name: myartifact1
-       path: /sheshi
+       path: sheshi
     - name: xyz
       run: |
-         cd /sheshi
+         cd sheshi
          ls -l
          cat myfile.txt         
   
