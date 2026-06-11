@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Print input values
       run: |
-         echo "${{ inputs.age }}"
-         echo "${{ inputs.loc }}"
+         echo "${{ inputs.DB_IP }}"
+         echo "${{ inputs.AUTH_TYPE }}"
     
