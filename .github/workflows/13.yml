@@ -2,13 +2,9 @@ name: workflow dispatch Inputs
 on: 
   workflow_dispatch:
    inputs:
-     age:
-       type: number
-       required: true
-     loc:
-       type: string
-       required: true
-       description: "Where do you live"       
+     env_type:
+       type: environment
+       required: true       
   
 jobs:
   job1:
