@@ -1,0 +1,9 @@
+name: Reuseble WF
+on: workflow_call
+jobs:
+  jobx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Msg
+      run: |
+        echo " Todays Date is $(date)"      
