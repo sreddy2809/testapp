@@ -1,0 +1,12 @@
+name: Set Env
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+    - name: print DB_Values
+      run: |
+         echo "DB_IP is ${{ var.DB_IP }}"
+         echo "DB_IP is ${{ secrets.DB_PASSWD }}"
+         echo "DB_IP is ${{ vars.AUTH_TYPE }}"
