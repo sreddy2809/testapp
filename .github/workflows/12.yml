@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: Prod
     steps:
     - name: print DB_Values
       run: |
