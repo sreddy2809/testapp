@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Print input values
       run: |
-         echo "${{ inputs.DB_IP }}"
-         echo "${{ inputs.AUTH_TYPE }}"
+         echo "${{ vars.DB_IP }}"
+         echo "${{ vars.AUTH_TYPE }}"
     
