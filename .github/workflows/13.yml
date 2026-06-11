@@ -4,7 +4,14 @@ on:
    inputs:
      env_type:
        type: environment
-       required: true       
+       required: true 
+     app_name:
+       type: choice
+       required: true
+       options:
+       - manager
+       - lead
+       - TeamMember       
   
 jobs:
   job1:
