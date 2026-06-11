@@ -1,0 +1,5 @@
+name: Calling Other Wf
+on: workflow_dispatch
+jobs:
+  job1:
+    uses: ./.github/workflows/14.yml
