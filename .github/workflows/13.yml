@@ -1,0 +1,22 @@
+name: workflow dispatch Inputs
+on: 
+  workflow_dispatch:
+   inputs:
+     age:
+       type: number
+       required: true
+     loc:
+       type: string
+       required: true
+       description: "Where do you live"       
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    environment: Prod
+    steps:
+    - name: Print input values
+      run: |
+         echo "${{ input.age }}"
+         echo "${{ input.loc }}"
+    
