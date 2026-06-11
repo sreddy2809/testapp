@@ -17,6 +17,6 @@ jobs:
     steps:
     - name: Print input values
       run: |
-         echo "${{ input.age }}"
-         echo "${{ input.loc }}"
+         echo "${{ inputs.age }}"
+         echo "${{ inputs.loc }}"
     
